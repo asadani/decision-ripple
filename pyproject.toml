@@ -17,3 +17,6 @@ decision-ripple = "decision_ripple.__main__:main"
 
 [tool.setuptools.packages.find]
 include = ["decision_ripple*"]
+
+[tool.setuptools.package-data]
+"*" = ["web/*.css", "web/*.js", "assets/*.css", "assets/*.js", "*.css", "*.js", "*.json"]
