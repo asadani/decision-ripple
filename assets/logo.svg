@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 96" role="img" aria-labelledby="title desc">
+<title id="title">Decision Ripple</title><desc id="desc">Original geometric identity for Find artifacts affected by a changed decision.</desc>
+<rect width="80" height="80" x="8" y="8" rx="18" fill="#754779"/>
+<path d="M40 35v10 M35 40h10 M29 23a21 21 0 1 0 22 0 M23 14a31 31 0 1 0 34 0" transform="translate(8 8)" fill="none" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="108" y="57" fill="#754779" font-family="Verdana,Arial,sans-serif" font-weight="700" font-size="29">Decision Ripple</text>
+</svg>
