@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "id": "sharing-approval-01",
+  "title": "Guest invitations",
+  "statement": "Workspace owners must approve every guest invitation before it is sent.",
+  "rationale": "Approval keeps guest access accountable while supporting project delivery.",
+  "tags": ["guest access", "sharing"]
+}

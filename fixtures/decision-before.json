@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "id": "sharing-approval-01",
+  "title": "Guest invitations",
+  "statement": "Workspace owners may invite guest accounts without prior approval.",
+  "rationale": "Fast collaboration supports project delivery.",
+  "tags": ["sharing", "guest access"]
+}

@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:decision-ripple:report:1",
+  "title": "Decision Ripple report",
+  "type": "object",
+  "required": ["schema_version", "decision_id", "change_status", "old_decision", "new_decision", "changed_fields", "query", "corpus", "method", "total_candidates", "omitted_candidates", "candidates"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "decision_id": {"type": "string"},
+    "change_status": {"enum": ["changed", "unchanged"]},
+    "old_decision": {"$ref": "decision.schema.json"},
+    "new_decision": {"$ref": "decision.schema.json"},
+    "changed_fields": {"type": "array", "items": {"enum": ["title", "statement", "rationale", "tags"]}},
+    "query": {"type": "object", "required": ["changed_tokens", "all_tokens"], "properties": {"changed_tokens": {"type": "array", "items": {"type": "string"}}, "all_tokens": {"type": "array", "items": {"type": "string"}}}},
+    "corpus": {"type": "array", "items": {"$ref": "#/$defs/corpusFile"}},
+    "method": {"type": "object", "required": ["name", "threshold", "limitations"], "properties": {"name": {"type": "string"}, "threshold": {"type": "number", "minimum": 0, "maximum": 1}, "limitations": {"type": "array", "items": {"type": "string"}}}},
+    "total_candidates": {"type": "integer", "minimum": 0},
+    "omitted_candidates": {"type": "integer", "minimum": 0},
+    "candidates": {"type": "array", "items": {"$ref": "#/$defs/candidate"}}
+  },
+  "$defs": {
+    "corpusFile": {"type": "object", "required": ["path", "sha256"], "properties": {"path": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "source": {"type": "object", "required": ["path", "line_start", "line_end"], "properties": {"path": {"type": "string"}, "line_start": {"type": "integer", "minimum": 1}, "line_end": {"type": "integer", "minimum": 1}}},
+    "candidate": {
+      "type": "object",
+      "required": ["id", "kind", "source", "excerpt", "excerpt_truncated", "reference_ids", "score", "matched_tokens", "matched_changed_tokens", "review_status", "reason"],
+      "properties": {
+        "id": {"type": "string"}, "kind": {"enum": ["explicit_reference", "lexical_candidate"]}, "source": {"$ref": "#/$defs/source"},
+        "excerpt": {"type": "string"}, "excerpt_truncated": {"type": "boolean"}, "reference_ids": {"type": "array", "items": {"type": "string"}},
+        "score": {"type": "number", "minimum": 0, "maximum": 1}, "matched_tokens": {"type": "array", "items": {"type": "string"}},
+        "matched_changed_tokens": {"type": "array", "items": {"type": "string"}}, "review_status": {"const": "unreviewed"}, "reason": {"type": "string"}
+      }
+    }
+  }
+}
