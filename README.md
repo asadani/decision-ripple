@@ -1,4 +1,6 @@
-<p align="center"><img src="assets/logo.svg" alt="Decision Ripple" width="310"></p>
+<p align="center">
+  <img src="assets/logo.svg" alt="Decision Ripple — One decision. Trace the impact." width="400" height="160">
+</p>
 
 Decision Ripple compares two versions of one explicit decision and ranks passages in a bounded, user-selected document set that may be worth reviewing. It distinguishes exact decision markers from lexical overlap and explains why each passage appeared. It does not infer a complete dependency graph or decide whether any document must change.
 
